@@ -15,7 +15,7 @@ public class AVLTree {
 
 		if (r == null) r = new AVLNode<>(i);
 
-
+		return r;
 	}
 
 	private class AVLNode<T>{

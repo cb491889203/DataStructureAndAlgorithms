@@ -277,6 +277,55 @@ public class StringTest {
 		return -1;
 	}
 
+	public int kmpSearch(String haystack, String needle) {
+		char[] t = haystack.toCharArray();
+		char[] p = needle.toCharArray();
+
+		int[] next = getNext(p);
+		int i = 0;
+		int j = 0;
+		while (i < t.length && j < p.length) {
+			if (j == -1 || t[i] == p[j]) {
+				i++;
+				j++;
+			} else {
+				j = next[j];
+			}
+		}
+
+		if (j == p.length) {
+			return i - j;
+		} else {
+			return -1;
+		}
+	}
+
+	private int[] getNext(char[] p) {
+		int[] next = new int[p.length];
+		if (p.length == 0) return next;
+
+		next[0] = -1;
+		int j = 0;
+		int k = -1;
+
+		while (j < p.length - 1) {
+			if (k == -1 || p[k] == p[j]) {
+				j++;
+				k++;
+
+				if (p[j] != p[k]) {
+					next[j] = k;
+				} else {
+					next[j] = next[k];
+				}
+			} else {
+				k = next[k];
+			}
+		}
+
+		return next;
+	}
+
 	public static void main(String[] args) {
 		StringTest test = new StringTest();
 		/*int i = test.lengthOfLongestSubstring(
@@ -318,6 +367,6 @@ public class StringTest {
 		// System.out.println("commonPrefix = " + commonPrefix);
 
 		// System.out.println("isValid = " + test.isValid("{{}[()]}"));
-		System.out.println("strStr = " + test.strStr("mississippi", "issipi"));
+		System.out.println("strStr = " + test.kmpSearch("mississipi", "issipi"));
 	}
 }

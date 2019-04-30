@@ -70,4 +70,8 @@ public class NumberTest {
 
 		return r == x;
 	}
+
+	public static void main(String[] args) {
+
+	}
 }

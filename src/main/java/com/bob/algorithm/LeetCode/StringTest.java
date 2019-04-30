@@ -326,6 +326,8 @@ public class StringTest {
 		return next;
 	}
 
+
+
 	public static void main(String[] args) {
 		StringTest test = new StringTest();
 		/*int i = test.lengthOfLongestSubstring(

@@ -1,4 +1,4 @@
-package com.bob.algorithm.LeetCode.collection_test;
+package com.bob.algorithm.LeetCode;
 
 public class ListTest {
 

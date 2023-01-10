@@ -1,4 +1,4 @@
-package com.bob.algorithm.LeetCode;
+package com.bob.algorithm.test;
 
 import com.bob.algorithm.BinarySearchTree.BinaryNode;
 
